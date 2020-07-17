@@ -1,9 +1,9 @@
 /* eslint-disable react/static-property-placement */
 /* eslint-disable global-require */
 /* eslint-disable react/state-in-constructor */
-import React, { Component } from 'react';
-import { ActivityIndicator, Alert, StatusBar } from 'react-native';
-import { TextInputMask } from 'react-native-masked-text';
+import React, {Component} from 'react';
+import {ActivityIndicator, Alert, StatusBar} from 'react-native';
+import {TextInputMask} from 'react-native-masked-text';
 import PropTypes from 'prop-types';
 import ImagePicker from 'react-native-image-picker';
 import Icon from 'react-native-vector-icons/MaterialIcons';
@@ -32,7 +32,7 @@ import {
   Avatar,
 } from './styles';
 
-import { colors } from '../../styles';
+import {colors} from '../../styles';
 
 export default class Signup extends Component {
   static propTypes = {
@@ -74,27 +74,27 @@ export default class Signup extends Component {
   checkPassLength = (text) => {
     const checkUserPassLength = text.length;
     if (checkUserPassLength <= 5) {
-      this.setState({ passLengthCheck: false });
+      this.setState({passLengthCheck: false});
     } else {
-      this.setState({ passLengthCheck: true });
+      this.setState({passLengthCheck: true});
     }
   };
 
   checkPass = (confirmedText) => {
-    const { userPass } = this.state;
+    const {userPass} = this.state;
     const userPassConfirm = confirmedText;
 
     if (userPass === userPassConfirm) {
-      this.setState({ check: true });
+      this.setState({check: true});
     } else {
-      this.setState({ check: false });
+      this.setState({check: false});
     }
   };
 
   handleSignUp = async () => {
-    const { fileUri, fileData, fileType } = this.state;
+    const {fileUri, fileData, fileType} = this.state;
 
-    this.setState({ loading: true });
+    this.setState({loading: true});
     const {
       userName,
       userMail,
@@ -107,10 +107,10 @@ export default class Signup extends Component {
       matriculaUnb,
       diabetes,
     } = this.state;
-    const { navigation } = this.props;
+    const {navigation} = this.props;
 
     if (diabetes === true) {
-      this.setState({ riskGroup: [...riskGroup, 'Diabetes'] });
+      this.setState({riskGroup: [...riskGroup, 'Diabetes']});
     }
 
     /* const data = new FormData();
@@ -153,17 +153,17 @@ export default class Signup extends Component {
       Alert.alert(
         'Atenção',
         'Usuário cadastrado com sucesso!',
-        [{ text: 'OK', onPress: () => navigation.navigate('Main') }],
-        { cancelable: false }
+        [{text: 'OK', onPress: () => navigation.navigate('Main')}],
+        {cancelable: false},
       );
     } catch (err) {
-      this.setState({ loading: false });
+      this.setState({loading: false});
       Alert.alert('Falha no cadastro', 'Verifique os dados informados');
     }
   };
 
   handleCheck = (group) => {
-    const { riskGroup, diabetes, hipertensao, drc, ddi } = this.state;
+    const {riskGroup, diabetes, hipertensao, drc, ddi} = this.state;
 
     const index = riskGroup.findIndex((gp) => gp === group);
 
@@ -174,19 +174,19 @@ export default class Signup extends Component {
     }
     switch (group) {
       case 'Diabetes': {
-        this.setState({ riskGroup, diabetes: !diabetes });
+        this.setState({riskGroup, diabetes: !diabetes});
         break;
       }
       case 'Hipertensão': {
-        this.setState({ riskGroup, hipertensao: !hipertensao });
+        this.setState({riskGroup, hipertensao: !hipertensao});
         break;
       }
       case 'Doença Respiratória Crônica': {
-        this.setState({ riskGroup, drc: !drc });
+        this.setState({riskGroup, drc: !drc});
         break;
       }
       case 'Doenças com Depressão Imunológica': {
-        this.setState({ riskGroup, ddi: !ddi });
+        this.setState({riskGroup, ddi: !ddi});
         break;
       }
       default: {
@@ -196,7 +196,7 @@ export default class Signup extends Component {
   };
 
   changeAvatar = async () => {
-    const { fileUri, fileData } = this.state;
+    const {fileUri, fileData} = this.state;
 
     const options = {
       title: 'Escolha uma das opções',
@@ -217,7 +217,7 @@ export default class Signup extends Component {
       } else if (response.error) {
         console.log('ImagePicker Error: ', response.error);
       } else {
-        const source = { uri: response.uri };
+        const source = {uri: response.uri};
 
         // You can also display the image using data:
         // const source = { uri: 'data:image/jpeg;base64,' + response.data };
@@ -269,7 +269,7 @@ export default class Signup extends Component {
               autoCapitalize="none"
               placeholder="Nome"
               value={userName}
-              onChangeText={(text) => this.setState({ userName: text })}
+              onChangeText={(text) => this.setState({userName: text})}
             />
             <Input
               autoCorrect={false}
@@ -277,7 +277,7 @@ export default class Signup extends Component {
               keyboardType="email-address"
               placeholder="Email"
               value={userMail}
-              onChangeText={(text) => this.setState({ userMail: text })}
+              onChangeText={(text) => this.setState({userMail: text})}
             />
             <TextInputMask
               type="cel-phone"
@@ -297,7 +297,7 @@ export default class Signup extends Component {
               placeholder="Telefone"
               placeholderTextColor="#000"
               value={userTel}
-              onChangeText={(text) => this.setState({ userTel: text })}
+              onChangeText={(text) => this.setState({userTel: text})}
             />
             <InputPass
               autoCorrect={false}
@@ -307,7 +307,7 @@ export default class Signup extends Component {
               placeholder="Senha"
               value={userPass}
               onChangeText={(text) => {
-                this.setState({ userPass: text });
+                this.setState({userPass: text});
                 this.checkPassLength(text);
               }}
               passLengthCheck={passLengthCheck}
@@ -322,7 +322,7 @@ export default class Signup extends Component {
               placeholder="Confirmação de senha"
               value={userPassConfirmed}
               onChangeText={(text) => {
-                this.setState({ userPassConfirmed: text });
+                this.setState({userPassConfirmed: text});
                 this.checkPass(text);
               }}
               check={check}
@@ -332,11 +332,11 @@ export default class Signup extends Component {
               autoCapitalize="none"
               placeholder="Endereço"
               value={userAddress}
-              onChangeText={(text) => this.setState({ userAddress: text })}
+              onChangeText={(text) => this.setState({userAddress: text})}
             />
             <TextInputMask
               type="datetime"
-              options={{ format: 'DD/MM/YYYY' }}
+              options={{format: 'DD/MM/YYYY'}}
               style={{
                 height: 45,
                 borderRadius: 11,
@@ -352,7 +352,7 @@ export default class Signup extends Component {
               placeholder="Data de nascimento"
               placeholderTextColor="#000"
               value={userBirth}
-              onChangeText={(text) => this.setState({ userBirth: text })}
+              onChangeText={(text) => this.setState({userBirth: text})}
             />
 
             <Input
@@ -361,14 +361,14 @@ export default class Signup extends Component {
               keyboardType="numeric"
               placeholder="Matrícula UnB"
               value={matriculaUnb}
-              onChangeText={(text) => this.setState({ matriculaUnb: text })}
+              onChangeText={(text) => this.setState({matriculaUnb: text})}
             />
             <AvatarView>
               <ButtonChangeAvatar onPress={this.changeAvatar}>
                 {fileUri ? (
                   <Avatar
-                    source={{ uri: fileUri }}
-                    style={{ resizeMode: 'cover' }}
+                    source={{uri: fileUri}}
+                    style={{resizeMode: 'cover'}}
                   />
                 ) : (
                   <>
@@ -419,33 +419,7 @@ export default class Signup extends Component {
                 text="Discente"
               />
             </FirstSelect>
-            <ThirdCenterView>
-              <SimpleText>GRUPO DE RISCO?</SimpleText>
-            </ThirdCenterView>
-            <SecondSelect>
-              <CheckBox
-                selected={diabetes}
-                onPress={() => this.handleCheck('Diabetes')}
-                text="Diabetes"
-              />
-              <CheckBox
-                selected={hipertensao}
-                onPress={() => this.handleCheck('Hipertensão')}
-                text="Hipertensão"
-              />
-              <CheckBox
-                selected={drc}
-                onPress={() => this.handleCheck('Doença Respiratória Crônica')}
-                text="Doença Respiratória Crônica"
-              />
-              <CheckBox
-                selected={ddi}
-                onPress={() =>
-                  this.handleCheck('Doenças com Depressão Imunológica')
-                }
-                text="Doenças com Depressão Imunológica"
-              />
-            </SecondSelect>
+
             <Button loading={loading} onPress={this.handleSignUp}>
               {loading ? (
                 <ActivityIndicator color={colors.white} />

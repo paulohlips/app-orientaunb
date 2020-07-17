@@ -1,5 +1,5 @@
 import create from 'zustand';
-import { Alert } from 'react-native';
+import {Alert} from 'react-native';
 import api from '../services/api';
 
 const reqAuth = async (set, params) => {
@@ -16,7 +16,7 @@ const reqAuth = async (set, params) => {
   } catch (error) {
     Alert.alert(
       'Falha na autenticação',
-      'Houve um erro no login, verifique suas credenciais'
+      'Houve um erro no login, verifique suas credenciais',
     );
     set((state) => ({
       ...state,
@@ -38,11 +38,11 @@ const [useAuth] = create((set) => ({
   isSick: null,
   geolocation: [],
   fetchAuth: (params) => {
-    set((state) => ({ ...state, loading: true }));
+    set((state) => ({...state, loading: true}));
     reqAuth(set, params);
   },
   changeGeolocation: (params) => {
-    set((state) => ({ ...state, geolocation: params }));
+    set((state) => ({...state, geolocation: params}));
   },
 }));
 

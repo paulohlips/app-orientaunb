@@ -122,6 +122,7 @@ class Home extends Component {
     const {userData, token} = this.props;
 
     const body = {email: userData.email, is_sick: true};
+
     const response = await api.put('volunteers', body, {
       headers: {
         Authorization: `Bearer ${token}`,
@@ -208,6 +209,8 @@ class Home extends Component {
     } = this.state;
     const {userData} = this.props;
 
+    console.log(userData);
+
     return (
       <Container>
         <StatusBar barStyle="light-content" backgroundColor="#0039A6" />
@@ -244,7 +247,7 @@ class Home extends Component {
         </QuestionText>
 
         <CardView>
-          {userData.type === 'Docente' ? (
+          {userData.link_unb === 'Docente' ? (
             <Card onPress={() => this.handleNavigateToOrientation()}>
               <LargeImage
                 source={require('../../assets/images/online-class.png')}
@@ -253,7 +256,7 @@ class Home extends Component {
             </Card>
           ) : null}
 
-          {userData.type == 'Discente' ? (
+          {userData.link_unb === 'Discente' ? (
             <Card onPress={() => this.handleNavigateToNewOrientation()}>
               <Image source={require('../../assets/images/opportunity.png')} />
               <Text m>Solicitar Orientação</Text>

@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/app/app.iml" filepath="$PROJECT_DIR$/.idea/modules/app/app.iml" group="apporientaunb/app" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/apporientaunb.iml" filepath="$PROJECT_DIR$/.idea/modules/apporientaunb.iml" group="apporientaunb" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/-807640207/lottie-react-native.iml" filepath="$PROJECT_DIR$/.idea/modules/-807640207/lottie-react-native.iml" group="apporientaunb/lottie-react-native" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/1310457189/react-native-community_async-storage.iml" filepath="$PROJECT_DIR$/.idea/modules/1310457189/react-native-community_async-storage.iml" group="apporientaunb/react-native-community_async-storage" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/648245666/react-native-community_masked-view.iml" filepath="$PROJECT_DIR$/.idea/modules/648245666/react-native-community_masked-view.iml" group="apporientaunb/react-native-community_masked-view" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/-2085554573/react-native-community_picker.iml" filepath="$PROJECT_DIR$/.idea/modules/-2085554573/react-native-community_picker.iml" group="apporientaunb/react-native-community_picker" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/-271393384/react-native-community_toolbar-android.iml" filepath="$PROJECT_DIR$/.idea/modules/-271393384/react-native-community_toolbar-android.iml" group="apporientaunb/react-native-community_toolbar-android" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/2095973749/react-native-gesture-handler.iml" filepath="$PROJECT_DIR$/.idea/modules/2095973749/react-native-gesture-handler.iml" group="apporientaunb/react-native-gesture-handler" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/-1060998735/react-native-image-picker.iml" filepath="$PROJECT_DIR$/.idea/modules/-1060998735/react-native-image-picker.iml" group="apporientaunb/react-native-image-picker" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/-1691597945/react-native-reanimated.iml" filepath="$PROJECT_DIR$/.idea/modules/-1691597945/react-native-reanimated.iml" group="apporientaunb/react-native-reanimated" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/542479518/react-native-safe-area-context.iml" filepath="$PROJECT_DIR$/.idea/modules/542479518/react-native-safe-area-context.iml" group="apporientaunb/react-native-safe-area-context" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/1556513334/react-native-screens.iml" filepath="$PROJECT_DIR$/.idea/modules/1556513334/react-native-screens.iml" group="apporientaunb/react-native-screens" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/1950467752/react-native-sensors.iml" filepath="$PROJECT_DIR$/.idea/modules/1950467752/react-native-sensors.iml" group="apporientaunb/react-native-sensors" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/564268673/react-native-vector-icons.iml" filepath="$PROJECT_DIR$/.idea/modules/564268673/react-native-vector-icons.iml" group="apporientaunb/react-native-vector-icons" />
+    </modules>
+  </component>
+</project>
