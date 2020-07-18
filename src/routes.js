@@ -11,6 +11,7 @@ import Talk from './pages/Talk';
 import Orientation from './pages/Orientation';
 import MyOrientation from './pages/MyOrientation';
 import NewOrientation from './pages/NewOrientation';
+import Aluno from './pages/Aluno';
 
 const AppStack = createStackNavigator();
 
@@ -41,6 +42,7 @@ export default function Routes() {
         <AppStack.Screen name="Orientation" component={Orientation} />
         <AppStack.Screen name="MyOrientation" component={MyOrientation} />
         <AppStack.Screen name="NewOrientation" component={NewOrientation} />
+        <AppStack.Screen name="Aluno" component={Aluno} />
       </AppStack.Navigator>
     </NavigationContainer>
   );

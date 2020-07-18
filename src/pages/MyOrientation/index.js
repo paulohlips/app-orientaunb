@@ -46,9 +46,8 @@ class MyOrientation extends Component {
 
   async componentDidMount() {
     const {token, userData} = this.props;
-
     try {
-      const response = await api.get(`/orientations/${userData.id}`, {
+      const response = await api.get(`/orientations`, {
         headers: {
           Authorization: `Bearer ${token}`,
         },
@@ -58,6 +57,9 @@ class MyOrientation extends Component {
     } catch (err) {
       console.log(err);
     }
+
+    
+
     BackHandler.addEventListener('hardwareBackPress', this.handleBackButton);
   }
 
@@ -170,7 +172,7 @@ class MyOrientation extends Component {
       <Container>
         <SubContainer>
           <HeaderTitle>
-            <HeaderText>Minhas Orientações</HeaderText>
+            <HeaderText>Minhas Orientações </HeaderText>
           </HeaderTitle>
           <PickerView>
             <Picker

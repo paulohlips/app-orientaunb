@@ -122,7 +122,6 @@ class Home extends Component {
     const {userData, token} = this.props;
 
     const body = {email: userData.email, is_sick: true};
-
     const response = await api.put('volunteers', body, {
       headers: {
         Authorization: `Bearer ${token}`,
@@ -173,6 +172,12 @@ class Home extends Component {
     navigation.navigate('NewOrientation');
   };
 
+  handleNavigateAluno = () => {
+    const {navigation} = this.props;
+
+    navigation.navigate('Aluno');
+  };
+
   handleLogout = async () => {
     const {navigation} = this.props;
     const {reset} = this.state;
@@ -208,8 +213,6 @@ class Home extends Component {
       exitVolunteer,
     } = this.state;
     const {userData} = this.props;
-
-    console.log(userData);
 
     return (
       <Container>
@@ -247,7 +250,7 @@ class Home extends Component {
         </QuestionText>
 
         <CardView>
-          {userData.link_unb === 'Docente' ? (
+          {userData.type == 'Docente' ? (
             <Card onPress={() => this.handleNavigateToOrientation()}>
               <LargeImage
                 source={require('../../assets/images/online-class.png')}
@@ -256,17 +259,35 @@ class Home extends Component {
             </Card>
           ) : null}
 
-          {userData.link_unb === 'Discente' ? (
+          {userData.type == 'Discente' ? (
             <Card onPress={() => this.handleNavigateToNewOrientation()}>
               <Image source={require('../../assets/images/opportunity.png')} />
               <Text m>Solicitar Orientação</Text>
             </Card>
           ) : null}
 
-          <Card onPress={() => this.handleNavigateToMyOrientation()}>
+          
+          {userData.type == 'Docente' ? (
+            <Card onPress={() => this.handleNavigateToMyOrientation()}>
             <Image source={require('../../assets/images/document.png')} />
             <Text m>Minhas Orientações</Text>
           </Card>
+          ) : null}
+
+          {userData.type == 'Discente' ? (
+            <Card onPress={() => this.handleNavigateAluno()}>
+            <Image source={require('../../assets/images/document.png')} />
+            <Text m>Minhas Orientações</Text>
+          </Card>
+          ) : null}
+    
+
+
+
+
+
+
+
           <Card onPress={() => this.handleNavigateToTalk()}>
             <Image source={require('../../assets/images/reception.png')} />
             <Text>Fale Conosco</Text>
