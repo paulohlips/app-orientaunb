@@ -244,7 +244,7 @@ class Home extends Component {
         </QuestionText>
 
         <CardView>
-          {userData.type === 'Docente' ? (
+          {userData.type == 'Docente' ? (
             <Card onPress={() => this.handleNavigateToOrientation()}>
               <LargeImage
                 source={require('../../assets/images/online-class.png')}
