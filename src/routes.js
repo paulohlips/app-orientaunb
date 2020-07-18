@@ -1,7 +1,7 @@
 import React from 'react';
-import {NavigationContainer} from '@react-navigation/native';
-import {createStackNavigator} from '@react-navigation/stack';
-import {colors} from './styles';
+import { NavigationContainer } from '@react-navigation/native';
+import { createStackNavigator } from '@react-navigation/stack';
+import { colors } from './styles';
 
 import Main from './pages/Main';
 import Home from './pages/Home';
@@ -11,7 +11,7 @@ import Talk from './pages/Talk';
 import Orientation from './pages/Orientation';
 import MyOrientation from './pages/MyOrientation';
 import NewOrientation from './pages/NewOrientation';
-import Aluno from './pages/Aluno';
+import Student from './pages/Student';
 
 const AppStack = createStackNavigator();
 
@@ -21,7 +21,7 @@ export default function Routes() {
       <AppStack.Navigator
         screenOptions={{
           headerTintColor: colors.white,
-          headerStyle: {height: 40, backgroundColor: colors.headerBlue},
+          headerStyle: { height: 40, backgroundColor: colors.headerBlue },
           headerTitle: '',
         }}
         headerMode="none">
@@ -38,11 +38,11 @@ export default function Routes() {
         <AppStack.Screen name="Camera" component={Camera} />
         <AppStack.Screen name="Register" component={Signup} />
         <AppStack.Screen name="Home" component={Home} />
+        <AppStack.Screen name="Student" component={Student} />
         <AppStack.Screen name="Talk" component={Talk} />
         <AppStack.Screen name="Orientation" component={Orientation} />
         <AppStack.Screen name="MyOrientation" component={MyOrientation} />
         <AppStack.Screen name="NewOrientation" component={NewOrientation} />
-        <AppStack.Screen name="Aluno" component={Aluno} />
       </AppStack.Navigator>
     </NavigationContainer>
   );

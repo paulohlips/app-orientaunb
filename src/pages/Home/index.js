@@ -2,19 +2,19 @@
 /* eslint-disable react/state-in-constructor */
 /* eslint-disable react/static-property-placement */
 /* eslint-disable global-require */
-import React, {Component} from 'react';
-import {Modal, BackHandler, StatusBar, ScrollView} from 'react-native';
+import React, { Component } from 'react';
+import { Modal, BackHandler, StatusBar, ScrollView } from 'react-native';
 import PropTypes from 'prop-types';
 import AsyncStorage from '@react-native-community/async-storage';
 import Icon from 'react-native-vector-icons/MaterialIcons';
 import AwesomeAlert from 'react-native-awesome-alerts';
 import Lottie from 'lottie-react-native';
-import {RadioButton} from 'react-native-paper';
+import { RadioButton } from 'react-native-paper';
 import leave from '../../assets/animations/leave.json';
 import stay from '../../assets/animations/stayPTBR.json';
 import question from '../../assets/animations/question.json';
 import useAuth from '../../store';
-import {colors} from '../../styles';
+import { colors } from '../../styles';
 import {
   titleMargin,
   altura_tela,
@@ -106,9 +106,9 @@ class Home extends Component {
     const checkedAsync = await AsyncStorage.getItem('checked');
 
     if (checkedAsync) {
-      this.setState({checked: checkedAsync});
+      this.setState({ checked: checkedAsync });
     } else {
-      this.setState({checked: 'second'});
+      this.setState({ checked: 'second' });
     }
 
     BackHandler.addEventListener('hardwareBackPress', this.handleBackButton);
@@ -118,30 +118,6 @@ class Home extends Component {
     BackHandler.removeEventListener('hardwareBackPress', this.handleBackButton);
   }
 
-  handleYes = async () => {
-    const {userData, token} = this.props;
-
-    const body = {email: userData.email, is_sick: true};
-    const response = await api.put('volunteers', body, {
-      headers: {
-        Authorization: `Bearer ${token}`,
-      },
-    });
-    AsyncStorage.setItem('checked', 'first');
-    this.setState({showAlert: true});
-  };
-
-  handleNo = async () => {
-    const {userData, token} = this.props;
-    const body = {email: userData.email, is_sick: false};
-    const response = await api.put('volunteers', body, {
-      headers: {
-        Authorization: `Bearer ${token}`,
-      },
-    });
-    AsyncStorage.setItem('checked', 'second');
-  };
-
   hideAlert = () => {
     this.setState({
       showAlert: false,
@@ -149,57 +125,47 @@ class Home extends Component {
   };
 
   handleNavigateToTalk = () => {
-    const {navigation} = this.props;
+    const { navigation } = this.props;
 
     navigation.navigate('Talk');
   };
 
   handleNavigateToOrientation = () => {
-    const {navigation} = this.props;
+    const { navigation } = this.props;
 
     navigation.navigate('Orientation');
   };
 
   handleNavigateToMyOrientation = () => {
-    const {navigation} = this.props;
+    const { navigation } = this.props;
 
     navigation.navigate('MyOrientation');
   };
 
   handleNavigateToNewOrientation = () => {
-    const {navigation} = this.props;
+    const { navigation } = this.props;
 
     navigation.navigate('NewOrientation');
   };
 
   handleNavigateAluno = () => {
-    const {navigation} = this.props;
+    const { navigation } = this.props;
 
-    navigation.navigate('Aluno');
+    navigation.navigate('Student');
   };
 
   handleLogout = async () => {
-    const {navigation} = this.props;
-    const {reset} = this.state;
+    const { navigation } = this.props;
+    const { reset } = this.state;
 
-    this.setState({reset: true});
+    this.setState({ reset: true });
     await AsyncStorage.clear();
 
-    navigation.navigate('Main', {reset: true});
-  };
-
-  handleLeaveVolunteer = async () => {
-    const {userData, token} = this.props;
-    const body = {email: userData.email, quit: true};
-    const response = await api.put('quitVolunteer', body, {
-      headers: {
-        Authorization: `Bearer ${token}`,
-      },
-    });
+    navigation.navigate('Main', { reset: true });
   };
 
   handleBackButton = () => {
-    this.setState({modalLogout: true});
+    this.setState({ modalLogout: true });
     return true;
   };
 
@@ -212,7 +178,7 @@ class Home extends Component {
       showAnimation,
       exitVolunteer,
     } = this.state;
-    const {userData} = this.props;
+    const { userData } = this.props;
 
     return (
       <Container>
@@ -221,18 +187,18 @@ class Home extends Component {
           animationType="fade"
           transparent
           visible={modalLogout}
-          onRequestClose={() => this.setState({modalLogout: false})}>
+          onRequestClose={() => this.setState({ modalLogout: false })}>
           <ModalContainer>
             <ModalView>
               <ModalText>Deseja realmente sair?</ModalText>
               <RowView>
                 <ModalButtonCancel
-                  onPress={() => this.setState({modalLogout: false})}>
+                  onPress={() => this.setState({ modalLogout: false })}>
                   <ModalButtonText>Cancelar</ModalButtonText>
                 </ModalButtonCancel>
                 <ModalButtonSair
                   onPress={() => {
-                    this.setState({modalLogout: false});
+                    this.setState({ modalLogout: false });
                     this.handleLogout();
                   }}>
                   <ModalButtonTextSair>Sair</ModalButtonTextSair>
@@ -266,27 +232,19 @@ class Home extends Component {
             </Card>
           ) : null}
 
-          
           {userData.type == 'Docente' ? (
             <Card onPress={() => this.handleNavigateToMyOrientation()}>
-            <Image source={require('../../assets/images/document.png')} />
-            <Text m>Minhas Orientações</Text>
-          </Card>
+              <Image source={require('../../assets/images/document.png')} />
+              <Text m>Minhas Orientações</Text>
+            </Card>
           ) : null}
 
           {userData.type == 'Discente' ? (
             <Card onPress={() => this.handleNavigateAluno()}>
-            <Image source={require('../../assets/images/document.png')} />
-            <Text m>Minhas Orientações</Text>
-          </Card>
+              <Image source={require('../../assets/images/document.png')} />
+              <Text m>Minhas Orientações</Text>
+            </Card>
           ) : null}
-    
-
-
-
-
-
-
 
           <Card onPress={() => this.handleNavigateToTalk()}>
             <Image source={require('../../assets/images/reception.png')} />
@@ -295,7 +253,7 @@ class Home extends Component {
         </CardView>
 
         <LogoutView>
-          <LogoutButton onPress={() => this.setState({modalLogout: true})}>
+          <LogoutButton onPress={() => this.setState({ modalLogout: true })}>
             <Icon name="exit-to-app" size={33} color={colors.white} />
           </LogoutButton>
         </LogoutView>
