@@ -1,6 +1,6 @@
 import styled from 'styled-components/native';
-import { RectButton } from 'react-native-gesture-handler';
-import { RadioButton } from 'react-native-paper';
+import {RectButton} from 'react-native-gesture-handler';
+import {RadioButton} from 'react-native-paper';
 import normalize from 'react-native-normalize';
 import {
   cardHeight,
@@ -81,7 +81,7 @@ export const QuestionText = styled.Text`
   color: #000;
   font-weight: bold;
   text-align: center;
-  margin-top: 12px;
+  margin-top: 25px;
 `;
 
 export const ViewButtons = styled.View`
@@ -108,7 +108,7 @@ export const RadioText = styled.Text`
 `;
 
 export const CardView = styled.View`
-  margin-top: 20%;
+  margin-top: 5%;
   justify-content: flex-start;
   height: 23px;
 `;
@@ -127,7 +127,8 @@ export const LogoutButton = styled(RectButton)`
   height: 50px;
   width: 50px;
   background: #fff;
-  margin-right: 10px;
+  margin-right: 50px;
+  margin-top: 225px;
   border-width: 3px;
   border-radius: 35px;
   border-color: #fff;

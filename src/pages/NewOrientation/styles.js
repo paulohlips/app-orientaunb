@@ -1,5 +1,5 @@
 import styled from 'styled-components/native';
-import { RectButton } from 'react-native-gesture-handler';
+import {RectButton} from 'react-native-gesture-handler';
 
 export const Container = styled.View`
   flex: 1;
@@ -91,4 +91,15 @@ export const ModalView = styled.View`
   height: 15%;
   width: ${(props) => (props.error ? '65%' : '50%')};
   elevation: 5;
+`;
+
+export const PickerView = styled.View`
+  height: ${(props) => (props.resumo ? '75px' : '45px')};
+  width: 85%;
+  background: #fff;
+  border-radius: 11px;
+  padding: 0 15px;
+  border: 2px solid #000;
+  margin: 15px 0 8px 0;
+  elevation: 6;
 `;
