@@ -14,75 +14,80 @@
 12    <uses-permission android:name="android.permission.INTERNET" />
 12-->C:\Users\leozi\app-orientaunb\android\app\src\main\AndroidManifest.xml:4:5-67
 12-->C:\Users\leozi\app-orientaunb\android\app\src\main\AndroidManifest.xml:4:22-64
-13    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
-13-->[com.facebook.flipper:flipper:0.37.0] C:\Users\leozi\.gradle\caches\transforms-2\files-2.1\623174cd4892d9fb924ac44b102b25c0\flipper-0.37.0\AndroidManifest.xml:16:5-76
-13-->[com.facebook.flipper:flipper:0.37.0] C:\Users\leozi\.gradle\caches\transforms-2\files-2.1\623174cd4892d9fb924ac44b102b25c0\flipper-0.37.0\AndroidManifest.xml:16:22-73
-14
-15    <application
-15-->C:\Users\leozi\app-orientaunb\android\app\src\main\AndroidManifest.xml:6:5-26:19
-16        android:name="com.apporientaunb.MainApplication"
-16-->C:\Users\leozi\app-orientaunb\android\app\src\main\AndroidManifest.xml:7:7-38
-17        android:allowBackup="false"
-17-->C:\Users\leozi\app-orientaunb\android\app\src\main\AndroidManifest.xml:11:7-34
-18        android:appComponentFactory="androidx.core.app.CoreComponentFactory"
-18-->[androidx.core:core:1.1.0] C:\Users\leozi\.gradle\caches\transforms-2\files-2.1\639e914bfc1efa21e36199d3ff2c5eef\core-1.1.0\AndroidManifest.xml:24:18-86
-19        android:debuggable="true"
-20        android:extractNativeLibs="true"
-20-->C:\Users\leozi\app-orientaunb\android\app\src\main\AndroidManifest.xml:12:7-39
-21        android:icon="@mipmap/ic_launcher"
-21-->C:\Users\leozi\app-orientaunb\android\app\src\main\AndroidManifest.xml:9:7-41
-22        android:label="@string/app_name"
-22-->C:\Users\leozi\app-orientaunb\android\app\src\main\AndroidManifest.xml:8:7-39
-23        android:roundIcon="@mipmap/ic_launcher_round"
-23-->C:\Users\leozi\app-orientaunb\android\app\src\main\AndroidManifest.xml:10:7-52
-24        android:theme="@style/AppTheme"
-24-->C:\Users\leozi\app-orientaunb\android\app\src\main\AndroidManifest.xml:13:7-38
-25        android:usesCleartextTraffic="true" >
-25-->C:\Users\leozi\app-orientaunb\android\app\src\debug\AndroidManifest.xml:7:18-53
-26        <activity
-26-->C:\Users\leozi\app-orientaunb\android\app\src\main\AndroidManifest.xml:14:7-24:18
-27            android:name="com.apporientaunb.MainActivity"
-27-->C:\Users\leozi\app-orientaunb\android\app\src\main\AndroidManifest.xml:15:9-37
-28            android:configChanges="keyboard|keyboardHidden|orientation|screenSize|uiMode"
-28-->C:\Users\leozi\app-orientaunb\android\app\src\main\AndroidManifest.xml:17:9-86
-29            android:label="@string/app_name"
-29-->C:\Users\leozi\app-orientaunb\android\app\src\main\AndroidManifest.xml:16:9-41
-30            android:launchMode="singleTask"
-30-->C:\Users\leozi\app-orientaunb\android\app\src\main\AndroidManifest.xml:18:9-40
-31            android:windowSoftInputMode="adjustResize" >
-31-->C:\Users\leozi\app-orientaunb\android\app\src\main\AndroidManifest.xml:19:9-51
-32            <intent-filter>
-32-->C:\Users\leozi\app-orientaunb\android\app\src\main\AndroidManifest.xml:20:9-23:25
-33                <action android:name="android.intent.action.MAIN" />
-33-->C:\Users\leozi\app-orientaunb\android\app\src\main\AndroidManifest.xml:21:13-65
-33-->C:\Users\leozi\app-orientaunb\android\app\src\main\AndroidManifest.xml:21:21-62
-34
-35                <category android:name="android.intent.category.LAUNCHER" />
-35-->C:\Users\leozi\app-orientaunb\android\app\src\main\AndroidManifest.xml:22:13-73
-35-->C:\Users\leozi\app-orientaunb\android\app\src\main\AndroidManifest.xml:22:23-70
-36            </intent-filter>
-37        </activity>
-38        <activity android:name="com.facebook.react.devsupport.DevSettingsActivity" />
-38-->C:\Users\leozi\app-orientaunb\android\app\src\main\AndroidManifest.xml:25:7-84
-38-->C:\Users\leozi\app-orientaunb\android\app\src\main\AndroidManifest.xml:25:17-81
-39
-40        <provider
-40-->[:react-native-image-picker] C:\Users\leozi\app-orientaunb\node_modules\react-native-image-picker\android\build\intermediates\library_manifest\debug\AndroidManifest.xml:10:9-18:20
-41            android:name="com.imagepicker.FileProvider"
-41-->[:react-native-image-picker] C:\Users\leozi\app-orientaunb\node_modules\react-native-image-picker\android\build\intermediates\library_manifest\debug\AndroidManifest.xml:11:13-56
-42            android:authorities="com.apporientaunb.provider"
-42-->[:react-native-image-picker] C:\Users\leozi\app-orientaunb\node_modules\react-native-image-picker\android\build\intermediates\library_manifest\debug\AndroidManifest.xml:12:13-60
-43            android:exported="false"
-43-->[:react-native-image-picker] C:\Users\leozi\app-orientaunb\node_modules\react-native-image-picker\android\build\intermediates\library_manifest\debug\AndroidManifest.xml:13:13-37
-44            android:grantUriPermissions="true" >
-44-->[:react-native-image-picker] C:\Users\leozi\app-orientaunb\node_modules\react-native-image-picker\android\build\intermediates\library_manifest\debug\AndroidManifest.xml:14:13-47
-45            <meta-data
-45-->[:react-native-image-picker] C:\Users\leozi\app-orientaunb\node_modules\react-native-image-picker\android\build\intermediates\library_manifest\debug\AndroidManifest.xml:15:13-17:58
-46                android:name="android.support.FILE_PROVIDER_PATHS"
-46-->[:react-native-image-picker] C:\Users\leozi\app-orientaunb\node_modules\react-native-image-picker\android\build\intermediates\library_manifest\debug\AndroidManifest.xml:16:17-67
-47                android:resource="@xml/provider_paths" />
-47-->[:react-native-image-picker] C:\Users\leozi\app-orientaunb\node_modules\react-native-image-picker\android\build\intermediates\library_manifest\debug\AndroidManifest.xml:17:17-55
-48        </provider>
-49    </application>
-50
-51</manifest>
+13    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+13-->C:\Users\leozi\app-orientaunb\android\app\src\main\AndroidManifest.xml:5:5-80
+13-->C:\Users\leozi\app-orientaunb\android\app\src\main\AndroidManifest.xml:5:22-78
+14    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+14-->[com.facebook.flipper:flipper:0.37.0] C:\Users\leozi\.gradle\caches\transforms-2\files-2.1\623174cd4892d9fb924ac44b102b25c0\flipper-0.37.0\AndroidManifest.xml:16:5-76
+14-->[com.facebook.flipper:flipper:0.37.0] C:\Users\leozi\.gradle\caches\transforms-2\files-2.1\623174cd4892d9fb924ac44b102b25c0\flipper-0.37.0\AndroidManifest.xml:16:22-73
+15
+16    <application
+16-->C:\Users\leozi\app-orientaunb\android\app\src\main\AndroidManifest.xml:7:5-28:19
+17        android:name="com.apporientaunb.MainApplication"
+17-->C:\Users\leozi\app-orientaunb\android\app\src\main\AndroidManifest.xml:9:7-38
+18        android:allowBackup="false"
+18-->C:\Users\leozi\app-orientaunb\android\app\src\main\AndroidManifest.xml:13:7-34
+19        android:appComponentFactory="androidx.core.app.CoreComponentFactory"
+19-->[androidx.core:core:1.1.0] C:\Users\leozi\.gradle\caches\transforms-2\files-2.1\639e914bfc1efa21e36199d3ff2c5eef\core-1.1.0\AndroidManifest.xml:24:18-86
+20        android:debuggable="true"
+21        android:extractNativeLibs="true"
+21-->C:\Users\leozi\app-orientaunb\android\app\src\main\AndroidManifest.xml:14:7-39
+22        android:icon="@mipmap/ic_launcher"
+22-->C:\Users\leozi\app-orientaunb\android\app\src\main\AndroidManifest.xml:11:7-41
+23        android:label="@string/app_name"
+23-->C:\Users\leozi\app-orientaunb\android\app\src\main\AndroidManifest.xml:10:7-39
+24        android:networkSecurityConfig="@xml/network_security_config"
+24-->C:\Users\leozi\app-orientaunb\android\app\src\main\AndroidManifest.xml:8:7-67
+25        android:roundIcon="@mipmap/ic_launcher_round"
+25-->C:\Users\leozi\app-orientaunb\android\app\src\main\AndroidManifest.xml:12:7-52
+26        android:theme="@style/AppTheme"
+26-->C:\Users\leozi\app-orientaunb\android\app\src\main\AndroidManifest.xml:15:7-38
+27        android:usesCleartextTraffic="true" >
+27-->C:\Users\leozi\app-orientaunb\android\app\src\debug\AndroidManifest.xml:7:18-53
+28        <activity
+28-->C:\Users\leozi\app-orientaunb\android\app\src\main\AndroidManifest.xml:16:7-26:18
+29            android:name="com.apporientaunb.MainActivity"
+29-->C:\Users\leozi\app-orientaunb\android\app\src\main\AndroidManifest.xml:17:9-37
+30            android:configChanges="keyboard|keyboardHidden|orientation|screenSize|uiMode"
+30-->C:\Users\leozi\app-orientaunb\android\app\src\main\AndroidManifest.xml:19:9-86
+31            android:label="@string/app_name"
+31-->C:\Users\leozi\app-orientaunb\android\app\src\main\AndroidManifest.xml:18:9-41
+32            android:launchMode="singleTask"
+32-->C:\Users\leozi\app-orientaunb\android\app\src\main\AndroidManifest.xml:20:9-40
+33            android:windowSoftInputMode="adjustResize" >
+33-->C:\Users\leozi\app-orientaunb\android\app\src\main\AndroidManifest.xml:21:9-51
+34            <intent-filter>
+34-->C:\Users\leozi\app-orientaunb\android\app\src\main\AndroidManifest.xml:22:9-25:25
+35                <action android:name="android.intent.action.MAIN" />
+35-->C:\Users\leozi\app-orientaunb\android\app\src\main\AndroidManifest.xml:23:13-65
+35-->C:\Users\leozi\app-orientaunb\android\app\src\main\AndroidManifest.xml:23:21-62
+36
+37                <category android:name="android.intent.category.LAUNCHER" />
+37-->C:\Users\leozi\app-orientaunb\android\app\src\main\AndroidManifest.xml:24:13-73
+37-->C:\Users\leozi\app-orientaunb\android\app\src\main\AndroidManifest.xml:24:23-70
+38            </intent-filter>
+39        </activity>
+40        <activity android:name="com.facebook.react.devsupport.DevSettingsActivity" />
+40-->C:\Users\leozi\app-orientaunb\android\app\src\main\AndroidManifest.xml:27:7-84
+40-->C:\Users\leozi\app-orientaunb\android\app\src\main\AndroidManifest.xml:27:17-81
+41
+42        <provider
+42-->[:react-native-image-picker] C:\Users\leozi\app-orientaunb\node_modules\react-native-image-picker\android\build\intermediates\library_manifest\debug\AndroidManifest.xml:10:9-18:20
+43            android:name="com.imagepicker.FileProvider"
+43-->[:react-native-image-picker] C:\Users\leozi\app-orientaunb\node_modules\react-native-image-picker\android\build\intermediates\library_manifest\debug\AndroidManifest.xml:11:13-56
+44            android:authorities="com.apporientaunb.provider"
+44-->[:react-native-image-picker] C:\Users\leozi\app-orientaunb\node_modules\react-native-image-picker\android\build\intermediates\library_manifest\debug\AndroidManifest.xml:12:13-60
+45            android:exported="false"
+45-->[:react-native-image-picker] C:\Users\leozi\app-orientaunb\node_modules\react-native-image-picker\android\build\intermediates\library_manifest\debug\AndroidManifest.xml:13:13-37
+46            android:grantUriPermissions="true" >
+46-->[:react-native-image-picker] C:\Users\leozi\app-orientaunb\node_modules\react-native-image-picker\android\build\intermediates\library_manifest\debug\AndroidManifest.xml:14:13-47
+47            <meta-data
+47-->[:react-native-image-picker] C:\Users\leozi\app-orientaunb\node_modules\react-native-image-picker\android\build\intermediates\library_manifest\debug\AndroidManifest.xml:15:13-17:58
+48                android:name="android.support.FILE_PROVIDER_PATHS"
+48-->[:react-native-image-picker] C:\Users\leozi\app-orientaunb\node_modules\react-native-image-picker\android\build\intermediates\library_manifest\debug\AndroidManifest.xml:16:17-67
+49                android:resource="@xml/provider_paths" />
+49-->[:react-native-image-picker] C:\Users\leozi\app-orientaunb\node_modules\react-native-image-picker\android\build\intermediates\library_manifest\debug\AndroidManifest.xml:17:17-55
+50        </provider>
+51    </application>
+52
+53</manifest>
