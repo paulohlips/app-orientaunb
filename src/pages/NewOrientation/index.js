@@ -2,6 +2,8 @@
 /* eslint-disable no-console */
 /* eslint-disable react/prop-types */
 import React, {Component} from 'react';
+import {colors} from '../../styles';
+import Icon from 'react-native-vector-icons/MaterialIcons';
 import {
   TouchableOpacity,
   Text,
@@ -25,6 +27,8 @@ import {
   ModalView,
   RowView,
   PickerView,
+  LogoutButton,
+  LogoutView,
 } from './styles';
 
 import useAuth from '../../store';
@@ -304,6 +308,12 @@ class NewOrientation extends Component {
             <ButtonText>ENVIAR SOLICITAÇÃO</ButtonText>
           )}
         </Button>
+
+        <LogoutView>
+          <LogoutButton onPress={() => this.handleBackButton()}>
+            <Icon name="exit-to-app" size={33} color={colors.white} />
+          </LogoutButton>
+        </LogoutView>
       </Container>
     );
   }

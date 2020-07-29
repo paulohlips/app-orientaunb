@@ -143,3 +143,25 @@ export const PickerView = styled.View`
   margin: 15px 0 8px 0;
   elevation: 6;
 `;
+
+export const LogoutView = styled.View`
+  flex-direction: row;
+  width: 100%;
+  margin-top: 120px;
+  margin-bottom: 5%;
+`;
+
+export const LogoutButton = styled(RectButton)`
+  height: 50px;
+  width: 50px;
+  background: #fff;
+  border-width: 5px;
+  border-radius: 35px;
+  border-color: #fff;
+  justify-content: center;
+  align-items: center;
+  elevation: 12;
+  margin-left: 85%;
+  margin-right: 5%;
+  background: #0039a6;
+`;

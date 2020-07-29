@@ -6,6 +6,8 @@ import React, {Component} from 'react';
 import {BackHandler, ScrollView} from 'react-native';
 import useAuth from '../../store';
 import api from '../../services/api';
+import Icon from 'react-native-vector-icons/MaterialIcons';
+import {colors} from '../../styles';
 
 import {
   Container,
@@ -21,6 +23,8 @@ import {
   CloseView,
   CloseButton,
   TextClose,
+  LogoutButton,
+  LogoutView,
 } from './styles';
 
 const withZustand = (Comp) => (props) => {
@@ -42,6 +46,7 @@ class Student extends Component {
   async componentDidMount() {
     const {token, userData} = this.props;
     try {
+      console.log(userData);
       const response = await api.get(`/orientations/${userData.id}`, {
         headers: {
           Authorization: `Bearer ${token}`,
@@ -83,35 +88,43 @@ class Student extends Component {
         </HeaderTitle>
 
         <ScrollView showsVerticalScrollIndicator={false}>
-          {myOrientations.map((item) =>
-            this.checkOwner(userData.id, item.professor_id) ? (
-              <CardContainer>
-                <TextView>
-                  <Text b>Departamento: </Text>
-                  <Text>{item.departament}</Text>
-                </TextView>
-                <TextView>
-                  <Text b>Título: </Text>
-                  <Text>{item.title}</Text>
-                </TextView>
-                <TextView>
-                  <Text b>Resumo: </Text>
-                  <TextTeste>{item.details}</TextTeste>
-                </TextView>
-                <CloseView>
-                  <CloseButton
-                    onPress={() => {
-                      this.handleClose(item.id);
-                    }}>
-                    <TextClose>Encerrar orientação</TextClose>
-                  </CloseButton>
-                </CloseView>
-              </CardContainer>
-            ) : null
-          )}
+          {myOrientations.map((item) => (
+            <CardContainer>
+              <TextView>
+                <Text b>Departamento: </Text>
+                <Text>{item.departament}</Text>
+              </TextView>
+              <TextView>
+                <Text b>Título: </Text>
+                <Text>{item.title}</Text>
+              </TextView>
+              <TextView>
+                <Text b>Resumo: </Text>
+                <TextTeste>{item.details}</TextTeste>
+              </TextView>
+              <TextView>
+                <Text b>Status: </Text>
+                <TextTeste>{item.status}</TextTeste>
+              </TextView>
+              <CloseView>
+                <CloseButton
+                  onPress={() => {
+                    this.handleClose(item.id);
+                  }}>
+                  <TextClose>Encerrar orientação</TextClose>
+                </CloseButton>
+              </CloseView>
+            </CardContainer>
+          ))}
           {!myOrientations ? (
             <Text>Departamento: Você ainda não possui orientações!</Text>
           ) : null}
+
+          <LogoutView>
+            <LogoutButton onPress={() => this.handleBackButton()}>
+              <Icon name="exit-to-app" size={33} color={colors.white} />
+            </LogoutButton>
+          </LogoutView>
         </ScrollView>
       </Container>
     );

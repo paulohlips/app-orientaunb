@@ -119,16 +119,14 @@ export const LogoutView = styled.View`
   width: 100%;
   align-items: center;
   justify-content: flex-end;
-  margin-top: 95%;
-  margin-right: 2%;
+  margin-top: 120px;
+  margin-bottom: 5%;
 `;
 
 export const LogoutButton = styled(RectButton)`
   height: 50px;
   width: 50px;
   background: #fff;
-  margin-right: 50px;
-  margin-top: 225px;
   border-width: 3px;
   border-radius: 35px;
   border-color: #fff;
@@ -136,6 +134,9 @@ export const LogoutButton = styled(RectButton)`
   align-items: center;
   elevation: 12;
   background: #0039a6;
+  margin-right: 5%;
+  margin-left: 85%;
+  margin-top: 570px;
 `;
 
 export const VolunteerButton = styled.TouchableOpacity`
