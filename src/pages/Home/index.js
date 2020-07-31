@@ -3,7 +3,7 @@
 /* eslint-disable react/static-property-placement */
 /* eslint-disable global-require */
 import React, {Component} from 'react';
-import {Modal, BackHandler, StatusBar, ScrollView} from 'react-native';
+import {Modal, BackHandler, StatusBar, View, ScrollView} from 'react-native';
 import PropTypes from 'prop-types';
 import AsyncStorage from '@react-native-community/async-storage';
 import Icon from 'react-native-vector-icons/MaterialIcons';
@@ -56,7 +56,6 @@ import {
   VolunteerButtonText,
 } from './styles';
 import api from '../../services/api';
-import {SubContainer} from '../MyOrientation/styles';
 
 const withZustand = (Comp) => (props) => {
   const {
@@ -183,86 +182,81 @@ class Home extends Component {
 
     return (
       <Container>
-        <ScrollView>
-          <StatusBar barStyle="light-content" backgroundColor="#0039A6" />
-          <Modal
-            animationType="fade"
-            transparent
-            visible={modalLogout}
-            onRequestClose={() => this.setState({modalLogout: false})}>
-            <ModalContainer>
-              <ModalView>
-                <ModalText>Deseja realmente sair?</ModalText>
-                <RowView>
-                  <ModalButtonCancel
-                    onPress={() => this.setState({modalLogout: false})}>
-                    <ModalButtonText>Cancelar</ModalButtonText>
-                  </ModalButtonCancel>
-                  <ModalButtonSair
-                    onPress={() => {
-                      this.setState({modalLogout: false});
-                      this.handleLogout();
-                    }}>
-                    <ModalButtonTextSair>Sair</ModalButtonTextSair>
-                  </ModalButtonSair>
-                </RowView>
-                <ModalViewAnimation>
-                  <Lottie resizeMode="contain" source={leave} autoPlay loop />
-                </ModalViewAnimation>
-              </ModalView>
-            </ModalContainer>
-          </Modal>
+        <StatusBar barStyle="light-content" backgroundColor="#0039A6" />
+        <Modal
+          animationType="fade"
+          transparent
+          visible={modalLogout}
+          onRequestClose={() => this.setState({modalLogout: false})}>
+          <ModalContainer>
+            <ModalView>
+              <ModalText>Deseja realmente sair?</ModalText>
+              <RowView>
+                <ModalButtonCancel
+                  onPress={() => this.setState({modalLogout: false})}>
+                  <ModalButtonText>Cancelar</ModalButtonText>
+                </ModalButtonCancel>
+                <ModalButtonSair
+                  onPress={() => {
+                    this.setState({modalLogout: false});
+                    this.handleLogout();
+                  }}>
+                  <ModalButtonTextSair>Sair</ModalButtonTextSair>
+                </ModalButtonSair>
+              </RowView>
+              <ModalViewAnimation>
+                <Lottie resizeMode="contain" source={leave} autoPlay loop />
+              </ModalViewAnimation>
+            </ModalView>
+          </ModalContainer>
+        </Modal>
 
-          <QuestionText>
-            Bem-vindo, {userData ? userData.name : 'Usuário'} !
-          </QuestionText>
-          <SubContainer>
-            <CardView>
-              {userData.type == 'Docente' ? (
-                <Card onPress={() => this.handleNavigateToOrientation()}>
-                  <LargeImage
-                    source={require('../../assets/images/online-class.png')}
-                  />
-                  <Text>Pedidos Orientação</Text>
-                </Card>
-              ) : null}
+        <QuestionText>
+          Bem-vindo, {userData ? userData.name : 'Usuário'} !
+        </QuestionText>
 
-              {userData.type == 'Discente' ? (
-                <Card onPress={() => this.handleNavigateToNewOrientation()}>
-                  <Image
-                    source={require('../../assets/images/opportunity.png')}
-                  />
-                  <Text m>Solicitar Orientação</Text>
-                </Card>
-              ) : null}
+        <CardView>
+          {userData.link_unb == 'Docente' ? (
+            <Card onPress={() => this.handleNavigateToOrientation()}>
+              <LargeImage
+                source={require('../../assets/images/online-class.png')}
+              />
+              <Text>Pedidos Orientação</Text>
+            </Card>
+          ) : null}
 
-              {userData.type == 'Docente' ? (
-                <Card onPress={() => this.handleNavigateToMyOrientation()}>
-                  <Image source={require('../../assets/images/document.png')} />
-                  <Text m>Minhas Orientações</Text>
-                </Card>
-              ) : null}
+          {userData.link_unb == 'Discente' ? (
+            <Card onPress={() => this.handleNavigateToNewOrientation()}>
+              <Image source={require('../../assets/images/opportunity.png')} />
+              <Text m>Solicitar Orientação</Text>
+            </Card>
+          ) : null}
 
-              {userData.type == 'Discente' ? (
-                <Card onPress={() => this.handleNavigateAluno()}>
-                  <Image source={require('../../assets/images/document.png')} />
-                  <Text m>Minhas Solicitações</Text>
-                </Card>
-              ) : null}
+          {userData.link_unb == 'Docente' ? (
+            <Card onPress={() => this.handleNavigateToMyOrientation()}>
+              <Image source={require('../../assets/images/document.png')} />
+              <Text m>Minhas Orientações</Text>
+            </Card>
+          ) : null}
 
-              <Card onPress={() => this.handleNavigateToTalk()}>
-                <Image source={require('../../assets/images/reception.png')} />
-                <Text>Fale Conosco</Text>
-              </Card>
-            </CardView>
-          </SubContainer>
+          {userData.link_unb == 'Discente' ? (
+            <Card onPress={() => this.handleNavigateAluno()}>
+              <Image source={require('../../assets/images/document.png')} />
+              <Text m>Minhas Orientações</Text>
+            </Card>
+          ) : null}
 
-          <LogoutView>
-            <LogoutButton onPress={() => this.setState({modalLogout: true})}>
-              <Icon name="exit-to-app" size={33} color={colors.white} />
-            </LogoutButton>
-          </LogoutView>
-        </ScrollView>
+          <Card onPress={() => this.handleNavigateToTalk()}>
+            <Image source={require('../../assets/images/reception.png')} />
+            <Text>Fale Conosco</Text>
+          </Card>
+        </CardView>
+
+        <LogoutView>
+          <LogoutButton onPress={() => this.setState({modalLogout: true})}>
+            <Icon name="exit-to-app" size={33} color={colors.white} />
+          </LogoutButton>
+        </LogoutView>
       </Container>
     );
   }

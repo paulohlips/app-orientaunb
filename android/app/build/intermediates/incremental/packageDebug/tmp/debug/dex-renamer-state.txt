@@ -1,4 +1,7 @@
-#Mon Jul 27 15:57:07 BRT 2020
-base.0=C\:\\Users\\leozi\\app-orientaunb\\android\\app\\build\\intermediates\\dex\\debug\\mergeDexDebug\\out\\classes.dex
-renamed.0=classes.dex
+#Fri Jul 31 15:43:50 BRT 2020
+base.0=/home/paulo/developer/Amoris/app-orientaunb/android/C\:\\Users\\leozi\\app-orientaunb\\android\\app\\build\\intermediates\\dex\\debug\\mergeDexDebug\\out\\classes.dex
+path.1=classes.dex
+renamed.1=classes2.dex
 path.0=classes.dex
+renamed.0=classes.dex
+base.1=/home/paulo/developer/Amoris/app-orientaunb/android/app/build/intermediates/dex/debug/mergeDexDebug/out/classes.dex
