@@ -1,5 +1,6 @@
 import styled from 'styled-components/native';
 import {RectButton} from 'react-native-gesture-handler';
+import {altura_tela} from '../../styles/responsividade';
 
 export const Container = styled.View`
   flex: 1;
@@ -100,13 +101,8 @@ export const PickerView = styled.View`
 `;
 
 export const LogoutView = styled.View`
-  flex-direction: row;
-  width: 100%;
-
-  margin-top: 120px;
-  margin-right: 5%;
+  margin-top: ${altura_tela * 0.65};
   margin-left: 85%;
-  margin-bottom: 5%;
 `;
 
 export const LogoutButton = styled(RectButton)`
@@ -118,6 +114,6 @@ export const LogoutButton = styled(RectButton)`
   border-color: #fff;
   justify-content: center;
   align-items: center;
-  elevation: 12;
+
   background: #0039a6;
 `;
